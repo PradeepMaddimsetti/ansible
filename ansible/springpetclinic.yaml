@@ -1,0 +1,16 @@
+---
+// spring petclinic application installation
+- hosts: all
+  become: yes
+  tasks:
+          - name: installing the java package by using apt module
+             apt:
+                 name: openjdk-8-jdk
+                 update: yes
+                 state: present
+          - name: url link for package downlode
+             get_url:
+                  url: https://war-jar-files.s3-us-west-2.amazonaws.com/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar
+          - name: starting the springpet clinic
+             commend: java -jar spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar
+---
