@@ -1,0 +1,18 @@
+---
+// installing nodejs application
+- hosts: all
+  become: yes
+  tasks:
+       - name: installing the nodejs
+            apt:
+                 name: nodejs
+                 update: yes
+                 state: present
+       - name: installing the npm package
+            apt:
+                 name: npm
+                 update: yes
+                 state: present
+       - name: check the version
+            commend: nodejs -v
+---
