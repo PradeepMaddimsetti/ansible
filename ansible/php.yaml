@@ -1,0 +1,21 @@
+---
+# php installation
+- hosts: all
+  become: yes
+  tasks:
+       - name: installing the apache2
+              apt:
+                 name: apache2
+                 update_cache: yes
+                 upgrade: yes
+                 state: present
+       - name: installing the php
+              apt:
+                 name: php
+                 state: present
+       - name: installing the mysql
+              apt:
+                 name: mysql-server mysql-client
+                 state: present
+                 shell: sudo mysql_secure_installation
+---

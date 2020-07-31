@@ -1,5 +1,5 @@
 ---
-// installing nodejs application
+# installing nodejs application
 - hosts: all
   become: yes
   tasks:

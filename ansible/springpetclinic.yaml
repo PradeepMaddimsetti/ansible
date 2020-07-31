@@ -1,5 +1,5 @@
 ---
-// spring petclinic application installation
+# spring petclinic application installation
 - hosts: all
   become: yes
   tasks:
